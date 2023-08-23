@@ -13,7 +13,7 @@ function Navbar() {
             <ul className="nav-list">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Categorias</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         <CartWidget />
