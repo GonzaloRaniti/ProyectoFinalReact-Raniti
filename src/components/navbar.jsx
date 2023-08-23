@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../app.css';
+import CartWidget from './cartwidget'; 
 
 function Navbar() {
-    const [cartCount, setCartCount] = useState(0);
+    
 
     return (
         <nav className="navbar">
@@ -15,9 +16,8 @@ function Navbar() {
                 <li><a href="#">Accesorios</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
-            <div className="cart-icon">
-                🛒 <span className="cart-counter">{cartCount}</span>
-            </div> 
+        <CartWidget />
+
         </nav>
     );
 }
