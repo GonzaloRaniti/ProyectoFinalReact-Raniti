@@ -1,10 +1,10 @@
 import '../app.css';
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ text}) => {
     return (
         <div>
-            <h2 className="parrafo">{greeting}</h2>
+            <h2 className="parrafo">PROXIMAMENTE PRODUCTOS</h2>
         </div>
     )
 }
