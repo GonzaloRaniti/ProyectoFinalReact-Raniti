@@ -8,7 +8,8 @@ function CartWidget() {
 
     return (
         <div className="cart-icon">
-            🛒 <span className="cart-counter">{cartCount}</span>
+            <img width={30} src="/carrito.png" alt='carrito' />
+            <span className="cart-counter">{cartCount}</span>
         </div>
     )
 

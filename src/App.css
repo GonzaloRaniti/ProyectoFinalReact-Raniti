@@ -41,7 +41,7 @@
 
 .parrafo{
   text-align: center;
-  font-size: 2rem;
+  font-size: 4rem;
   text-decoration: underline;
   margin-bottom: 10px;
   transform: scale(1);
@@ -53,3 +53,51 @@
   }
 }
 
+
+/* ESTILOS DE MI ITEMCOUNT */
+.Contador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.Boton {
+  font-size: 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.Boton:hover {
+  background-color: #0056b3;
+}
+
+.Numero {
+  font-size: 24px;
+  margin: 0 20px;
+}
+
+.AgregarCarrito {
+  font-size: px; 
+  width: 160px; 
+  height: 50px; 
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+.AgregarCarrito:hover {
+  background-color: #1e7e34;
+}

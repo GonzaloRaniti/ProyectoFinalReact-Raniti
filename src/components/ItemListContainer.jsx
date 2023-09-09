@@ -4,7 +4,7 @@ import '../app.css';
 const ItemListContainer = ({ text}) => {
     return (
         <div>
-            <h2 className="parrafo">PROXIMAMENTE PRODUCTOS</h2>
+            <h2 className="parrafo">CG INDUMENTARIA</h2>
         </div>
     )
 }
