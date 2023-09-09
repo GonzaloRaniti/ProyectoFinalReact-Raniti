@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "titulo": "Camisa celeste",
+        "precio": 20.000,
+        "descripcion": "Nuestra camisa celeste de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
+        "categoria":  "camisas",
+        "image": "./camisa-1.png"
+    },
+    {
+        "id": 2,
+        "titulo": "Camisa blanca",
+        "precio": 22.000,
+        "descripcion": "Nuestra camisa blanca de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
+        "categoria":  "camisas",
+        "image": "./camisa-2.png"
+    },
+    {
+        "id": 3,
+        "titulo": "Camisa negra",
+        "precio": 15.000,
+        "descripcion": "Nuestra camisa negra de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
+        "categoria":  "camisas",
+        "image": "./camisa-3.png"
+    },
+    {
+        "id": 4,
+        "titulo": "Camisa blanca",
+        "precio": 45.000,
+        "descripcion": "Nuestra camisa blanca de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
+        "categoria":  "camisas",
+        "image": "./camisa-4.png"
+    },
+    {
+        "id": 5,
+        "titulo": "Camisa blanca",
+        "precio": 60.000,
+        "descripcion": "Nuestra camisa blanca de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
+        "categoria":  "camisas",
+        "image": "./camisa-5.png"
+    },
+    {
+        "id": 6,
+        "titulo": "Pantalon gris",
+        "precio": 30.000,
+        "descripcion": "Nuestro pantalon gris es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
+        "categoria":  "pantalones",
+        "image": "./pantalon.png"
+    },
+    {
+        "id": 7,
+        "titulo": "Jean celeste",
+        "precio": 50.000,
+        "descripcion": "Nuestro jean celeste es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
+        "categoria":  "pantalones",
+        "image": "./pantalon-2.png"
+    },
+    {
+        "id": 8,
+        "titulo": "Jean destenido",
+        "precio": 45.000,
+        "descripcion": "Nuestro jean azulado es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
+        "categoria":  "pantalones",
+        "image": "./pantalon-3.png"
+    },
+    {
+        "id": 9,
+        "titulo": "Jean gris destenido",
+        "precio": 20.000,
+        "descripcion": "Nuestro jean desteñido gris es mucho más que una prenda de vestir; es una declaración de estilo. Su diseño meticulosamente elaborado presenta sutiles efectos de desteñido en tonos grises, creando un aspecto desgastado y contemporáneo que se adapta perfectamente a cualquier ocasión.",
+        "categoria":  "pantalones",
+        "image": "./pantalon-4.png"
+    },
+    {
+        "id": 10,
+        "titulo": "Bermuda gris",
+        "precio": 55.000,
+        "descripcion": "Nuestra bermuda gris es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
+        "categoria":  "pantalones",
+        "image": "./pantalon-5.png"
+    },
+    {
+        "id": 11,
+        "titulo": "Remera Blanca",
+        "precio": 20.000,
+        "descripcion": " Nuestra remera blanca es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
+        "categoria":  "remeras",
+        "image": "./remera.png"
+    },
+    {
+        "id": 12,
+        "titulo": "Remera Negra",
+        "precio": 35.000,
+        "descripcion": "Nuestra remera Negra es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
+        "categoria":  "remeras",
+        "image": "./remera-2.png"
+    },
+    {
+        "id": 13,
+        "titulo": "Remera blanca",
+        "precio": 25.000,
+        "descripcion": "Nuestra remera blanca es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
+        "categoria":  "remeras",
+        "image": "./remera-3.png"
+    },
+    {
+        "id": 14,
+        "titulo": "Remera negra en u",
+        "precio": 40.000,
+        "descripcion": "Nuestra remera negra en U es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
+        "categoria":  "remeras",
+        "image": "./remera-4.png"
+    },
+    {
+        "id": 15,
+        "titulo": "Remera negra entallada",
+        "precio": 12.000,
+        "descripcion": "Nuestra remera negra entallada es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
+        "categoria":  "remeras",
+        "image": "./remera-5.png"
+    }
+
+]
