@@ -161,3 +161,20 @@
 .contact-form button:hover {
   background-color: #0056b3;
 }
+
+.card{
+  background-color: red;
+  width: 25%;
+  margin: 1%;
+}
+
+.prueba{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.img{
+  width: 100%;
+  height: 250px;
+}

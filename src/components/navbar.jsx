@@ -8,6 +8,7 @@ function Navbar() {
 
 
     return (
+        <>
         <nav className="navbar">
             <Link to="/">
                 <img width={100} src="/logo-1.png" alt="Logo" />
@@ -22,6 +23,8 @@ function Navbar() {
             <CartWidget />
 
         </nav>
+        <h2 className="parrafo">CG INDUMENTARIA</h2>
+        </>
     );
 }
 
