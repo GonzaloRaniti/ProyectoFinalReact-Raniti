@@ -1,4 +1,5 @@
 
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -20,7 +21,7 @@
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 20px; /* Espacio entre los enlaces */
+  gap: 20px; 
 }
 
 .nav-link {
@@ -163,9 +164,13 @@
 }
 
 .card{
-  background-color: red;
+  background-color: #fafafa;
   width: 25%;
   margin: 1%;
+}
+
+.card p {
+  font-weight: bold;
 }
 
 .prueba{
@@ -176,5 +181,5 @@
 
 .img{
   width: 100%;
-  height: 250px;
+  height: 300px;
 }
