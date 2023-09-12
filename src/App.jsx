@@ -14,10 +14,10 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route exact path='/' element={<ItemListContainer productos={products}/>}/>
-                    <Route path="/camisas" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="camisas")}/>} />
-                    <Route path="/pantalones" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="pantalones")}/>} />  
-                    <Route path="/remeras" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="remeras")}/>} /> 
-                    <Route path='/contacto' element={<Contacto/>} />                    
+                    <Route exact path="/camisas" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="camisas")}/>} />
+                    <Route exact path="/pantalones" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="pantalones")}/>} />  
+                    <Route exact path="/remeras" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="remeras")}/>} /> 
+                    <Route exact path='/contacto' element={<Contacto/>} />                    
               </Routes>
                 <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
             </BrowserRouter>
