@@ -1,23 +1,16 @@
-
-import { useEffect, useState } from 'react';
+import React from 'react';
 import '../app.css';
-import prod from "../../productos.json"
+import { Link } from 'react-router-dom';
+import Item from './item';
 
-
-
-
-
-const ItemList = ({producto}) => {
-
+const ItemList = ({ productos }) => {
     return (
-        <div className='card'>
-            <p>{producto.titulo}</p>
-            <p>Precio $ {producto.precio}</p>
-            <p>{producto.descripcion}</p>
-            <p>{producto.categoria}</p>
-            <img src={producto.image} alt="Imagen" className='img' />
+        <div className='prueba'>
+            {productos.map(item => (
+                <Item  key={item.id} producto={item}/>
+            ))}
         </div>
     )
 }
 
-export default ItemList
+export default ItemList;

@@ -4,22 +4,24 @@ import Contacto from './components/contacto';
 import ItemListContainer from './components/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemCount from './components/itemCount';
-import products from '../productos.json';
+import ItemDetailContainer from './components/itemdetailcontainer';
+// import { CartProvider } from './context/cartContext';
 
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                {/* <CartProvider> */}
                 <Navbar />
                 <Routes>
-                    <Route exact path='/' element={<ItemListContainer productos={products}/>}/>
-                    <Route exact path="/camisas" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="camisas")}/>} />
-                    <Route exact path="/pantalones" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="pantalones")}/>} />  
-                    <Route exact path="/remeras" element={<ItemListContainer productos={products.filter((prod)=>prod.categoria==="remeras")}/>} /> 
-                    <Route exact path='/contacto' element={<Contacto/>} />                    
-              </Routes>
+                    <Route exact path='/' element={<ItemListContainer />} />
+                    <Route exact path="/category/:idCategory" element={<ItemListContainer />} />
+                    <Route exact path="/producto/:idProducto" element={<ItemDetailContainer />} />
+                    <Route exact path='/contacto' element={<Contacto />} />
+                </Routes>
                 <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
+                {/* </CartProvider> */}
             </BrowserRouter>
         </div>
     );
