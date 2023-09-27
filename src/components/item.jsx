@@ -17,6 +17,7 @@ const Item = ({ producto }) => {
             <p>Precio $ {producto.precio}</p>
             <p>{producto.descripcion}</p>
             <p>{producto.categoria}</p>
+            <p> Stock {producto.stock}</p>
             <img src={producto.image} alt="Imagen" className='img' />
         </div>
         

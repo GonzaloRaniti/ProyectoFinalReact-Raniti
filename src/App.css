@@ -46,6 +46,11 @@
   cursor: pointer;
 }
 
+.cart-counter{
+  margin-left: 15px;
+  padding-right: 20px;
+}
+
 
 .parrafo{
   text-align: center;
@@ -60,6 +65,7 @@
     color:orange;
   }
 }
+
 
 
 /* ESTILOS DE MI ITEMCOUNT */
@@ -167,7 +173,11 @@
   background-color: #fafafa;
   width: 25%;
   margin: 1%;
+  
 }
+
+
+
 
 .card p {
   font-weight: bold;

@@ -11,8 +11,9 @@ import ItemDetailContainer from './components/itemdetailcontainer';
 function App() {
     return (
         <div className="App">
+            {/* <CartProvider> */}
             <BrowserRouter>
-                {/* <CartProvider> */}
+                
                 <Navbar />
                 <Routes>
                     <Route exact path='/' element={<ItemListContainer />} />
@@ -21,8 +22,9 @@ function App() {
                     <Route exact path='/contacto' element={<Contacto />} />
                 </Routes>
                 <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
-                {/* </CartProvider> */}
+                
             </BrowserRouter>
+            {/* </CartProvider> */}
         </div>
     );
 }

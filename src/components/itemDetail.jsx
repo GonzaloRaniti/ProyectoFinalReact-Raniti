@@ -6,10 +6,9 @@ import prod from "../../productos.json"
 
 
 const ItemDetail = ({ producto }) => {
-    console.log(producto)
     return (
         <div className='card'>
-            <p>{producto.titulo}</p>
+            <h1>{producto.titulo}</h1>
             <p>Precio $ {producto.precio}</p>
             <p>{producto.descripcion}</p>
             <p>{producto.categoria}</p>

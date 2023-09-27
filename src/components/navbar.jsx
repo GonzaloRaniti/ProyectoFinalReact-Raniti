@@ -11,7 +11,7 @@ function Navbar() {
         <>
             <nav className="navbar">
                 <Link to="/">
-                    <img width={100} src="/logo-1.png" alt="Logo" />
+                    <img width={100} src="/logo-2.png" alt="Logo" />
                 </Link>
 
                 <ul className="nav-list">
