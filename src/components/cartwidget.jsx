@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
-import '../app.css';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CartContext } from './CartContext';
+import imagen1 from '/carrito-2.png'
 
 function CartWidget() {
-
-
-    const [cartCount, setCartCount] = useState(0);
+    const { calcItemsQty, cartList } = useContext(CartContext);
 
     return (
         <div className="cart-icon">
-            <img width={30} src="/carrito-2.png" alt='carrito' />
-            <span className="cart-counter">{cartCount}</span>
+            {cartList.length > 0 && (
+                <>
+                    
+                    <img src={ imagen1 }/>
+                    <span className="cart-counter">{calcItemsQty()}</span>
+                </>
+            )}
         </div>
     )
-
 }
 
 export default CartWidget;

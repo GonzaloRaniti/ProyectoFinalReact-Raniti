@@ -40,7 +40,7 @@
 }
 
 
-
+/* Carrito de compras */
 .cart-icon {
   font-size: 1.5rem;
   cursor: pointer;
@@ -86,13 +86,13 @@
 .Boton {
   font-size: 20px;
   border: none;
-  background-color: #007BFF;
+  background-color: hwb(207 5% 1%);
   color: white;
   cursor: pointer;
 }
 
 .Boton:hover {
-  background-color: #0056b3;
+  background-color: hsl(56, 94%, 50%);
 }
 
 .Numero {
@@ -176,12 +176,25 @@
   
 }
 
+.card a {
+  display: block;
+  text-decoration: none;
+  color: #f08c09; 
+  font-weight: bold;
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.card a:hover {
+  color: #0056b3;
+}
 
 
 
-.card p {
+.card p{
   font-weight: bold;
 }
+
 
 .prueba{
   display: flex;

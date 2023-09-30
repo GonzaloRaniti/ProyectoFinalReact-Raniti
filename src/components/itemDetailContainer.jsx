@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import productos from "../../productos.json";
 import ItemDetail from './itemdetail';
 import '../app.css';
+import ItemCount from './itemCount';
 import { Link, useParams } from 'react-router-dom';
 
 const mockAPI = (idProducto) => {
@@ -23,14 +24,13 @@ export default function ItemDetailContainer() {
 
     
     useEffect(() => {
-        console.log(idProducto)
         mockAPI(idProducto).then((data) => setProductoFiltrados(data));
     }, [idProducto]);
 
     return (
         <div className='item-list-container'>
             <ItemDetail producto={productoFiltrados} />
-            
+            <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
         </div>
     );
 }

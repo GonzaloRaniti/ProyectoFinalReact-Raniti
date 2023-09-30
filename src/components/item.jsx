@@ -13,11 +13,11 @@ const Item = ({ producto }) => {
             <Link to={`/producto/${producto.id}`}>
             Ir a Detalle
             </Link>
-            <p>{producto.titulo}</p>
-            <p>Precio $ {producto.precio}</p>
-            <p>{producto.descripcion}</p>
-            <p>{producto.categoria}</p>
-            <p> Stock {producto.stock}</p>
+            <p className='parrafo-3'>{producto.titulo}</p>
+            <p className='parrafo-3'>Precio $ {producto.precio}</p>
+            <p className='parrafo-3'>{producto.descripcion}</p>
+            <p className='parrafo-3'>{producto.categoria}</p>
+            <p className='parrafo-3'> Stock {producto.stock}</p>
             <img src={producto.image} alt="Imagen" className='img' />
         </div>
         
