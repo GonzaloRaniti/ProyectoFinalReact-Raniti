@@ -21,7 +21,9 @@ const ItemCount = ({ stock, initial, producto }) => {
 
     const agregarAlCarrito = () => {
         if (producto && producto.id) {
+
             addToCart({
+
                 id: producto.id,
                 nombre: producto.titulo,
                 precio: producto.precio,

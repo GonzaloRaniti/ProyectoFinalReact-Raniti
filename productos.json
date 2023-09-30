@@ -24,7 +24,7 @@
         "descripcion": "Nuestra camisa negra de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
         "categoria":  "camisas",
         "image": "/camisa-3.png",
-        "stock": 4
+        "stock": 5
     },
     {
         "id": "4",
@@ -33,7 +33,7 @@
         "descripcion": "Nuestra camisa blanca de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
         "categoria":  "camisas",
         "image": "/camisa-4.png",
-        "stock": 15
+        "stock": 5
     },
     {
         "id": "5",
@@ -42,7 +42,7 @@
         "descripcion": "Nuestra camisa blanca de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
         "categoria":  "camisas",
         "image": "/camisa-5.png",
-        "stock": 40
+        "stock": 5
     },
     {
         "id": "6",
@@ -51,7 +51,7 @@
         "descripcion": "Nuestro pantalon gris es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
         "categoria":  "pantalones",
         "image": "/pantalon.png",
-        "stock": 2
+        "stock": 5
     },
     {
         "id": "7",
@@ -60,7 +60,7 @@
         "descripcion": "Nuestro jean celeste es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
         "categoria":  "pantalones",
         "image": "/pantalon-2.png",
-        "stock": 15
+        "stock": 5
     },
     {
         "id": "8",
@@ -69,7 +69,7 @@
         "descripcion": "Nuestro jean azulado es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
         "categoria":  "pantalones",
         "image": "/pantalon-3.png",
-        "stock": 26
+        "stock": 5
     },
     {
         "id": "9",
@@ -78,7 +78,7 @@
         "descripcion": "Nuestro jean desteñido gris es mucho más que una prenda de vestir; es una declaración de estilo. Su diseño meticulosamente elaborado presenta sutiles efectos de desteñido en tonos grises, creando un aspecto desgastado y contemporáneo que se adapta perfectamente a cualquier ocasión.",
         "categoria":  "pantalones",
         "image": "/pantalon-4.png",
-        "stock": 10
+        "stock": 5
     },
     {
         "id": "10",
@@ -87,7 +87,7 @@
         "descripcion": "Nuestra bermuda gris es mucho más que una prenda; es una expresión de estilo y autenticidad. Con su característico tono azul, este jean es un lienzo en blanco que te permite crear looks infinitos para cada ocasión.",
         "categoria":  "pantalones",
         "image": "/pantalon-5.png",
-        "stock": 9
+        "stock": 5
     },
     {
         "id": "11",
@@ -96,7 +96,7 @@
         "descripcion": " Nuestra remera blanca es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
         "categoria":  "remeras",
         "image": "/remera.png",
-        "stock": 11
+        "stock": 5
     },
     {
         "id": "12",
@@ -105,7 +105,7 @@
         "descripcion": "Nuestra remera Negra es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
         "categoria":  "remeras",
         "image": "/remera-2.png",
-        "stock": 40
+        "stock": 5
     },
     {
         "id": "13",
@@ -114,7 +114,7 @@
         "descripcion": "Nuestra remera blanca es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
         "categoria":  "remeras",
         "image": "/remera-3.png",
-        "stock": 60
+        "stock": 5
     },
     {
         "id": "14",
@@ -123,7 +123,7 @@
         "descripcion": "Nuestra remera negra en U es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
         "categoria":  "remeras",
         "image": "/remera-4.png",
-        "stock": 65
+        "stock": 5
     },
     {
         "id": "15",
@@ -132,7 +132,7 @@
         "descripcion": "Nuestra remera negra entallada es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
         "categoria":  "remeras",
         "image": "/remera-5.png",
-        "stock": 80
+        "stock": 5
     }
 
 ]

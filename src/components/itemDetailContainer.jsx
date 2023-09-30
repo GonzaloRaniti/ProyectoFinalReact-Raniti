@@ -30,7 +30,6 @@ export default function ItemDetailContainer() {
     return (
         <div className='item-list-container'>
             <ItemDetail producto={productoFiltrados} />
-            <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
         </div>
     );
 }
