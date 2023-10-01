@@ -13,8 +13,9 @@ function CartWidget() {
         <div className="cart-icon">
             {cartList && (
                 <>
-                    
+                    <Link to='/Cart'>
                     <img width={30} src={ imagen1 }/>
+                    </Link>
                     <span className="cart-counter">{calcItemsQty()}</span>
                 </>
             )}

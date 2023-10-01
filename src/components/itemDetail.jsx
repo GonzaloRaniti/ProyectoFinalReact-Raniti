@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import '../app.css';
-import prod from "../../productos.json"
+import productos from '../../productos.json'
 import { useCart } from './CartContext';
 import { Link } from "react-router-dom"
 import ItemCount from './itemCount';

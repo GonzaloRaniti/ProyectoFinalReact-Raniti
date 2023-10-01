@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext"
 
 
+
 const Cart = () => {
     const { cartList, removeProducto, limpiarCarrito } = useContext(CartContext);
 
@@ -16,25 +17,26 @@ const Cart = () => {
 
     return (
         <div>
-            <h2>Carrito de Compras</h2>
+
+            
             
             {cartList.length > 0 ? (
                 <>
                     <ul>
-                        {cartList.map((item) => (
-                            <li key={item.id}>
-                                {item.nombre} - Cantidad: {item.quantity} - Precio por unidad: ${item.precio} - Total: ${item.precio * item.quantity}
-                                <button onClick={() => handleRemoveItem(item.id)}>Eliminar</button>
+                        {cartList.map((producto) => (
+                            <li key={producto.id}>
+                                {producto.nombre} - Cantidad: {producto.quantity} - Precio por unidad: ${producto.precio} - Total: ${producto.precio * producto.quantity}
+                                <button onClick={() => handleRemoveItem(producto.id)}>Eliminar</button>
                             </li>
                         ))}
                     </ul>
-                    <p>Precio total: ${cartList.reduce((total, item) => total + item.precio * item.quantity, 0)}</p>
+                    <p>Precio total: ${cartList.reduce((total, producto) => total + producto.precio * producto.quantity, 0)}</p>
                     <button onClick={handleClearCart}>Vaciar Carrito</button>
                 </>
             ) : (
                 <div>
-                    <p>No hay ítems en el carrito.</p>
-                    <Link to="/">Ir al catálogo</Link>
+                    <h1 className="titulo-4">No hay ítems en el carrito.</h1>
+                    <Link to="/" className="Link-2">Ir al catálogo</Link>
                 </div>
             )}
         </div>
