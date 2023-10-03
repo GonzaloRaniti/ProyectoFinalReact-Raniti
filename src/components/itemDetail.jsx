@@ -14,10 +14,10 @@ import ItemCount from './itemCount';
 const ItemDetail = ({ producto }) => {
 
     const [goToCart, setGoToCart] = useState(false)
-    const { addItem } = useCart()
+    const { addToCart } = useCart()
 
     const onAdd = (quantity) => {
-        addItem(producto, quantity)
+        addToCart(producto, quantity)
         setGoToCart(true)
         
     }

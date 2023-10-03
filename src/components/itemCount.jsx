@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import '../app.css';
 import { CartContext } from './CartContext';
+import productos from '../../productos.json';
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
     const [quantity, setQuantity] = useState(initial);
     const { addToCart } = useContext(CartContext);
 
@@ -20,11 +21,14 @@ const ItemCount = ({ stock, initial }) => {
 
     const agregarAlCarrito = () => {
         if (stock > 0) {
+            const productoActual = productos.find(producto => producto.id); 
+
             addToCart({
-                id: "unique-id", 
-                nombre: "Nombre del Producto",
-                precio: 100, 
-                stock: stock 
+                id: productoActual.id,
+                nombre: productoActual.titulo,
+                precio: productoActual.precio,
+                imagen: productoActual.image,
+                stock: productoActual.stock
             }, quantity);
         } else {
             console.log("No se pudo agregar al carrito. Verifica el stock del producto.");

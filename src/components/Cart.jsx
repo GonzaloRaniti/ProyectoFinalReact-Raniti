@@ -1,43 +1,78 @@
-import { useContext } from "react"
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "./CartContext"
-
-
+import { CartContext } from "./CartContext";
+import productos from '../../productos.json';
 
 const Cart = () => {
-    const { cartList, removeProducto, limpiarCarrito } = useContext(CartContext);
+    const { cartList, removerProducto, limpiarCarrito } = useContext(CartContext);
+    const [compraFinalizada, setCompraFinalizada] = useState(false);
+    const [codigoEnvio, setCodigoEnvio] = useState(null);
 
     const handleRemoveItem = (id) => {
-        removeProducto(id);
+        removerProducto(id);
     };
 
     const handleClearCart = () => {
+
+        const nuevoCodigoEnvio = generarCodigoEnvioUnico();
+
+
+        setCompraFinalizada(true);
+        setCodigoEnvio(nuevoCodigoEnvio);
+
+
         limpiarCarrito();
     };
 
-    return (
-        <div>
+    const generarCodigoEnvioUnico = () => {
 
-            
-            
-            {cartList.length > 0 ? (
+        return "XHGJDYUEHD458DSS6";
+    };
+
+    return (
+        <div className="cart-container">
+            {compraFinalizada ? (
+                <div className="compra-finalizada">
+                    <h1>¡Muchas gracias por su compra!</h1>
+                    <h2>Deja tus datos en la sección contactos!</h2>
+                    <p>Su código de envío es: {codigoEnvio}</p>
+                    
+                </div>
+            ) : (
                 <>
-                    <ul>
+                    <ul className="cart-list">
                         {cartList.map((producto) => (
-                            <li key={producto.id}>
-                                {producto.nombre} - Cantidad: {producto.quantity} - Precio por unidad: ${producto.precio} - Total: ${producto.precio * producto.quantity}
-                                <button onClick={() => handleRemoveItem(producto.id)}>Eliminar</button>
+                            <li key={producto.id} className="cart-item">
+                                <div className="cart-item-details">
+                                    <img src={producto.image} alt={producto.titulo} className="cart-item-image" />
+                                    <span className="cart-item-name">{producto.titulo}</span>
+                                    <span className="cart-item-quantity">Cantidad: {producto.quantity}</span>
+                                    <span className="cart-item-price">Precio por unidad: ${producto.precio}</span>
+                                    <span className="cart-item-total">Total: ${producto.precio * producto.quantity}</span>
+                                </div>
+                                <button className="cart-item-remove" onClick={() => handleRemoveItem(producto.id)}>
+                                    Eliminar
+                                </button>
                             </li>
                         ))}
                     </ul>
-                    <p>Precio total: ${cartList.reduce((total, producto) => total + producto.precio * producto.quantity, 0)}</p>
-                    <button onClick={handleClearCart}>Vaciar Carrito</button>
+                    <div className="cart-buttons">
+                        <button className="cart-clear-button" onClick={handleClearCart}>
+                            Vaciar Carrito
+                        </button>
+
+                    </div>
+                    <>
+                        <button className="cart-finalizar-compra" onClick={handleClearCart}>
+                            Finalizar Compra
+                        </button>
+                    </>
+                    <p className="cart-total">Precio total: ${cartList.reduce((total, producto) => total + producto.precio * producto.quantity, 0)}</p>
+
+                    <Link to="/" className="boton-5">Ir al catalogo</Link>
                 </>
-            ) : (
-                <div>
-                    <h1 className="titulo-4">No hay ítems en el carrito.</h1>
-                    <Link to="/" className="Link-2">Ir al catálogo</Link>
-                </div>
+
+                
             )}
         </div>
     );
