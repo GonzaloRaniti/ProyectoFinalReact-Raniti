@@ -360,13 +360,13 @@
 }
 
 .compra-finalizada h1 {
-  color: #3498db; /* Color del texto */
+  color: #3498db; 
   font-size: 28px;
   margin-bottom: 10px;
 }
 
 .compra-finalizada h2 {
-  color: #555; /* Color del subtitulo */
+  color: #555; 
   font-size: 20px;
   margin-bottom: 10px;
 }
