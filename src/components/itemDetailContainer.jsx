@@ -1,37 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import productos from "../../productos.json";
+import { collection, doc, getDoc, getFirestore } from "firebase/firestore";
 import ItemDetail from './itemdetail';
 import '../app.css';
-import ItemCount from './itemCount';
-import { Link, useParams } from 'react-router-dom';
-
-const mockAPI = (idProducto) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-
-            if (idProducto !== undefined) {
-                const productoFiltrados = productos.find(item => item.id === idProducto);
-
-                resolve(productoFiltrados)
-            }
-        }, 1000);
-    });
-};
+import { useParams } from 'react-router-dom';
 
 export default function ItemDetailContainer() {
-    const [productoFiltrados, setProductoFiltrados] = useState([]);
-    const { idProducto} = useParams()
+    const [productoFiltrado, setProductoFiltrado] = useState(null);
+    const { idProducto } = useParams();
+    const db = getFirestore();
 
-    
     useEffect(() => {
-        mockAPI(idProducto).then((data) => setProductoFiltrados(data));
-    }, [idProducto]);
+        if (idProducto) {
+            const productoDoc = doc(db, "productos", idProducto);
+
+            getDoc(productoDoc)
+                .then((doc) => {
+                    if (doc.exists()) {
+                        setProductoFiltrado({ id: doc.id, ...doc.data() });
+                    } else {
+                        console.error("No such document!");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error getting document:", error);
+                });
+        }
+    }, [idProducto, db]);
 
     return (
         <div className='item-list-container'>
-            <ItemDetail producto={productoFiltrados} />
+            {productoFiltrado && <ItemDetail producto={productoFiltrado} />}
         </div>
     );
 }
-
-

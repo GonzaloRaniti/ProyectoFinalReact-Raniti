@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/navbar';
 import Contacto from './components/contacto';
 import ItemListContainer from './components/ItemListContainer';
@@ -8,13 +8,14 @@ import ItemDetail from './components/itemdetail';
 import ItemDetailContainer from './components/itemDetailContainer';
 import Cart from './components/Cart';
 import CartContextProvider from './components/CartContext';
+import Checkout from './components/checkOut';
 
 
 function App() {
-    const { idProducto } = useParams();
-
     return (
         <div className="App">
+
+
             <CartContextProvider>
                 <BrowserRouter>
                     <Navbar />
@@ -33,6 +34,7 @@ function App() {
                         />
                         <Route exact path='/contacto' element={<Contacto />} />
                         <Route exact path='/cart' element={<Cart />} />
+                        <Route path="/checkout" element={<Checkout />} />
                     </Routes>
                 </BrowserRouter>
 

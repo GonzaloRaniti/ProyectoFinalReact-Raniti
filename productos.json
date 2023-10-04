@@ -15,7 +15,7 @@
         "descripcion": "Nuestra camisa blanca de vestir es mucho más que una prenda; es una declaración de estilo atemporal. Su diseño impecable y su confección de alta calidad la convierten en un elemento esencial en el guardarropa de cualquier persona que valora la elegancia y la calidad.",
         "categoria":  "camisas",
         "image": "/camisa-2.png",
-        "stock": 8
+        "stock": 5
     },
     {
         "id": "3",
@@ -93,7 +93,7 @@
         "id": "11",
         "titulo": "Remera Blanca",
         "precio": 20000,
-        "descripcion": " Nuestra remera blanca es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
+        "descripcion": "Nuestra remera blanca es un claro ejemplo de cómo la sencillez puede ser sinónimo de elegancia. Esta prenda es mucho más que una remera; es una declaración de estilo versátil y atemporal.",
         "categoria":  "remeras",
         "image": "/remera.png",
         "stock": 5

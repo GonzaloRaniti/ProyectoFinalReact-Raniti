@@ -1,33 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import productos from "../../productos.json";
+import { collection, getDocs, query, where, getFirestore } from "firebase/firestore";
 import ItemList from './itemList';
 import '../App.css';
 import { useParams } from 'react-router-dom';
 
-const mockAPI = (idCategory) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-
-            if (idCategory !== undefined) {
-                const productosFiltrados = productos.filter(item => item.categoria === idCategory);
-
-                resolve(productosFiltrados)
-            } else {
-                resolve(productos);
-            }
-        }, 1000);
-    });
-};
-
 export default function ItemListContainer() {
     const [productosFiltrados, setProductosFiltrados] = useState([]);
-    const { idCategory} = useParams()
+    const { idCategory } = useParams();
+    const db = getFirestore();
 
-    
     useEffect(() => {
-        console.log(idCategory)
-        mockAPI(idCategory).then((data) => setProductosFiltrados(data));
-    }, [idCategory]);
+        const productosCollection = idCategory
+            ? getDocs(query(collection(db, "productos"), where("categoria", "==", idCategory)))
+            : getDocs(collection(db, "productos"));
+
+        productosCollection
+            .then((snapshot) => {
+                const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+                setProductosFiltrados(data);
+            })
+            .catch((error) => {
+                console.error("Error getting documents: ", error);
+            });
+    }, [idCategory, db]);
 
     return (
         <div className='item-list-container'>
@@ -35,5 +30,3 @@ export default function ItemListContainer() {
         </div>
     );
 }
-
-
