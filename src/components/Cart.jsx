@@ -1,42 +1,23 @@
-import React, { useContext, useState } from "react";
+// Cart.js
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
-import productos from '../../productos.json';
 
 const Cart = () => {
-    const { cartList, removerProducto, limpiarCarrito } = useContext(CartContext);
-    const [compraFinalizada, setCompraFinalizada] = useState(false);
-    const [codigoEnvio, setCodigoEnvio] = useState(null);
+    const { cartList, removerProducto, limpiarCarrito, calcItemsQty } = useContext(CartContext);
 
     const handleRemoveItem = (id) => {
         removerProducto(id);
     };
 
-    const handleClearCart = () => {
-
-        const nuevoCodigoEnvio = generarCodigoEnvioUnico();
-
-
-        setCompraFinalizada(true);
-        setCodigoEnvio(nuevoCodigoEnvio);
-
-
-        limpiarCarrito();
-    };
-
-    const generarCodigoEnvioUnico = () => {
-
-        return "XHGJDYUEHD458DSS6";
-    };
-
     return (
         <div className="cart-container">
-            {compraFinalizada ? (
+            {!cartList.length ? (
                 <div className="compra-finalizada">
-                    <h1>¡Muchas gracias por su compra!</h1>
-                    <h2>Deja tus datos en la sección contactos!</h2>
-                    <p>Su código de envío es: {codigoEnvio}</p>
-                    
+                    <h1>¡Tu carrito está vacío!</h1>
+                    <Link to="/" className="boton-5">
+                        Ir al comprar
+                    </Link>
                 </div>
             ) : (
                 <>
@@ -57,22 +38,18 @@ const Cart = () => {
                         ))}
                     </ul>
                     <div className="cart-buttons">
-                        <button className="cart-clear-button" onClick={handleClearCart}>
+                        <button className="cart-clear-button" onClick={limpiarCarrito}>
                             Vaciar Carrito
                         </button>
-
                     </div>
-                    <>
-                        <button className="cart-finalizar-compra" onClick={handleClearCart}>
-                            Finalizar Compra
-                        </button>
-                    </>
                     <p className="cart-total">Precio total: ${cartList.reduce((total, producto) => total + producto.precio * producto.quantity, 0)}</p>
-
-                    <Link to="/" className="boton-5">Ir al catalogo</Link>
+                    <Link to="/checkout" className="cart-finalizar-compra">
+                        Finalizar Compra
+                    </Link>
+                    <Link to="/" className="boton-5">
+                        Ir al catálogo
+                    </Link>
                 </>
-
-                
             )}
         </div>
     );

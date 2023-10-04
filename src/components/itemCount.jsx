@@ -2,8 +2,9 @@ import React, { useState, useContext } from 'react';
 import '../app.css';
 import { CartContext } from './CartContext';
 import productos from '../../productos.json';
+import { Link } from  'react-router-dom'
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({stock, initial, onAdd }) => {
     const [quantity, setQuantity] = useState(initial);
     const { addToCart } = useContext(CartContext);
 
@@ -42,9 +43,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 <h3 className='Numero'>{quantity}</h3>
                 <button className='Boton' onClick={incrementar}>+</button>
             </div>
+            <Link to="/Cart">
             <button className='Boton' onClick={agregarAlCarrito} disabled={!stock}>
                 Agregar al carrito
             </button>
+            </Link>
         </div>
     );
 };
