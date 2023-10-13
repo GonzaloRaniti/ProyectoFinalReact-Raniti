@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
 import '../app.css';
 import { CartContext } from './CartContext';
-import productos from '../../productos.json';
-import { Link } from  'react-router-dom'
 
-const ItemCount = ({stock, initial, onAdd }) => {
-    const [quantity, setQuantity] = useState(initial);
+import productos from '../../productos.json';
+import { Link } from 'react-router-dom';
+
+const ItemCount = ({ stock, onAdd }) => {
+    const [quantity, setQuantity] = useState(1);
     const { addToCart } = useContext(CartContext);
 
     const incrementar = () => {
@@ -22,15 +23,14 @@ const ItemCount = ({stock, initial, onAdd }) => {
 
     const agregarAlCarrito = () => {
         if (stock > 0) {
-            const productoActual = productos.find(producto => producto.id); 
+            const productoActual = productos.find(producto => producto.id);
 
             addToCart({
-                id: productoActual.id,
-                nombre: productoActual.titulo,
-                precio: productoActual.precio,
-                imagen: productoActual.image,
-                stock: productoActual.stock
-            }, quantity);
+                ...productoActual, 
+                cantidad: quantity, 
+            });
+
+            onAdd(quantity);
         } else {
             console.log("No se pudo agregar al carrito. Verifica el stock del producto.");
         }
@@ -44,9 +44,9 @@ const ItemCount = ({stock, initial, onAdd }) => {
                 <button className='Boton' onClick={incrementar}>+</button>
             </div>
             <Link to="/Cart">
-            <button className='Boton' onClick={agregarAlCarrito} disabled={!stock}>
-                Agregar al carrito
-            </button>
+                <button className='Boton' onClick={agregarAlCarrito} disabled={!stock}>
+                    Agregar al carrito
+                </button>
             </Link>
         </div>
     );

@@ -1,30 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../app.css';
 import CartWidget from './cartwidget';
-import { Link } from 'react-router-dom';
-import Cart from './Cart';
-
 
 function Navbar() {
-
-
     return (
         <>
             <nav className="navbar">
-                <Link to="/">
+                <NavLink to="/">
                     <img width={100} src="/logo-2.png" alt="Logo" />
-                </Link>
+                </NavLink>
 
                 <ul className="nav-list">
-                    <Link to="/category/camisas" className="nav-link">Camisas</Link>
-                    <Link to="/category/pantalones" className="nav-link">Pantalones</Link>
-                    <Link to="/category/remeras" className="nav-link">Remeras</Link>
-                    <Link to="/contacto" className="nav-link">Contacto</Link>
+                    <NavLink to="/category/camisas" className="nav-link">Camisas</NavLink>
+                    <NavLink to="/category/pantalones" className="nav-link">Pantalones</NavLink>
+                    <NavLink to="/category/remeras" className="nav-link">Remeras</NavLink>
+                    <NavLink to="/contacto" className="nav-link">Contacto</NavLink>
                 </ul>
-                
+
                 <CartWidget />
-
-
             </nav>
 
             <h2 className="parrafo">CG INDUMENTARIA</h2>
@@ -33,5 +27,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-

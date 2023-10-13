@@ -5,28 +5,31 @@ import '../App.css';
 import { useParams } from 'react-router-dom';
 
 export default function ItemListContainer() {
-    const [productosFiltrados, setProductosFiltrados] = useState([]);
+    const [productos, setProductos] = useState([]);
     const { idCategory } = useParams();
     const db = getFirestore();
 
     useEffect(() => {
-        const productosCollection = idCategory
-            ? getDocs(query(collection(db, "productos"), where("categoria", "==", idCategory)))
-            : getDocs(collection(db, "productos"));
+        const fetchData = async () => {
+            try {
+                const productosCollection = idCategory
+                    ? getDocs(query(collection(db, "productos"), where("categoria", "==", idCategory)))
+                    : getDocs(collection(db, "productos"));
 
-        productosCollection
-            .then((snapshot) => {
+                const snapshot = await productosCollection;
                 const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-                setProductosFiltrados(data);
-            })
-            .catch((error) => {
+                setProductos(data);
+            } catch (error) {
                 console.error("Error getting documents: ", error);
-            });
+            }
+        };
+
+        fetchData();
     }, [idCategory, db]);
 
     return (
         <div className='item-list-container'>
-            <ItemList productos={productosFiltrados} />
+            <ItemList productos={productos} />
         </div>
     );
 }

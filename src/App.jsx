@@ -4,7 +4,7 @@ import Contacto from './components/contacto';
 import ItemListContainer from './components/ItemListContainer';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import ItemCount from './components/itemCount';
-import ItemDetail from './components/itemdetail';
+import ItemDetail from './components/itemDetail';
 import ItemDetailContainer from './components/itemDetailContainer';
 import Cart from './components/Cart';
 import CartContextProvider from './components/CartContext';

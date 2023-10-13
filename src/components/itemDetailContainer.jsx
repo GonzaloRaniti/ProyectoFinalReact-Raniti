@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { collection, doc, getDoc, getFirestore } from "firebase/firestore";
-import ItemDetail from './itemdetail';
-import '../app.css';
+import { collection, getDocs, query, where, getFirestore } from "firebase/firestore";
+import ItemList from './itemList';
+import '../App.css';
 import { useParams } from 'react-router-dom';
 
-export default function ItemDetailContainer() {
-    const [productoFiltrado, setProductoFiltrado] = useState(null);
-    const { idProducto } = useParams();
-    const db = getFirestore();
+export default function ItemListContainer() {
+    const [productosFiltrados, setProductosFiltrados] = useState([]);
+    const { idCategory } = useParams();
 
     useEffect(() => {
-        if (idProducto) {
-            const productoDoc = doc(db, "productos", idProducto);
+        const fetchData = async () => {
+            try {
+                const db = getFirestore();
+                const productosCollection = idCategory
+                    ? getDocs(query(collection(db, "productos"), where("categoria", "==", idCategory)))
+                    : getDocs(collection(db, "productos"));
 
-            getDoc(productoDoc)
-                .then((doc) => {
-                    if (doc.exists()) {
-                        setProductoFiltrado({ id: doc.id, ...doc.data() });
-                    } else {
-                        console.error("No such document!");
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error getting document:", error);
-                });
-        }
-    }, [idProducto, db]);
+                const snapshot = await productosCollection;
+                const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+                setProductosFiltrados(data);
+            } catch (error) {
+                console.error("Error getting documents: ", error);
+            }
+        };
+
+        fetchData();
+    }, [idCategory]);
 
     return (
         <div className='item-list-container'>
-            {productoFiltrado && <ItemDetail producto={productoFiltrado} />}
+            <ItemList productos={productosFiltrados} />
         </div>
     );
 }
