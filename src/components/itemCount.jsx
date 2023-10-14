@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import '../app.css';
 import { CartContext } from './CartContext';
-
 import productos from '../../productos.json';
 import { Link } from 'react-router-dom';
 
@@ -25,11 +24,13 @@ const ItemCount = ({ stock, onAdd }) => {
         if (stock > 0) {
             const productoActual = productos.find(producto => producto.id);
 
+            
             addToCart({
                 ...productoActual, 
                 cantidad: quantity, 
             });
 
+            
             onAdd(quantity);
         } else {
             console.log("No se pudo agregar al carrito. Verifica el stock del producto.");
