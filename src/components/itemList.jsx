@@ -1,7 +1,7 @@
 import React from 'react';
 import '../app.css';
 import { Link } from 'react-router-dom';
-import Item from './item';
+import Item from './Item';
 
 const ItemList = ({ productos }) => {
     return (
