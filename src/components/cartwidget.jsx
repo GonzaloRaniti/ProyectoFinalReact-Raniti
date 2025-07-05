@@ -11,7 +11,7 @@ function CartWidget() {
         <div className="cart-icon">
             {cartList && (
                 <>
-                    <Link to='/Cart'>
+                    <Link to='/cart'>
                         <img width={30} src={imagen1} alt="Carrito" />
                     </Link>
                     <span className="cart-counter">{Number.isNaN(itemsQty) ? 0 : itemsQty}</span>

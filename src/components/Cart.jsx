@@ -10,45 +10,70 @@ const Cart = () => {
         removerProducto(id);
     };
 
+    const total = cartList.reduce((total, producto) => total + producto.precio * producto.quantity, 0);
+
     return (
         <div className="cart-container">
+            <h1 style={{ textAlign: 'center', marginBottom: '2rem', color: '#333' }}>Tu Carrito</h1>
+            
             {!cartList.length ? (
-                <div className="compra-finalizada">
-                    <h1>¡Tu carrito está vacío!</h1>
-                    <Link to="/" className="boton-5">
-                        Ir al comprar
+                <div className="empty-cart">
+                    <h2 className="empty-cart-title">¡Tu carrito está vacío!</h2>
+                    <p style={{ marginBottom: '2rem', color: '#666' }}>Agrega algunos productos para comenzar a comprar.</p>
+                    <Link to="/" className="empty-cart-link">
+                        Ir al Catálogo
                     </Link>
                 </div>
             ) : (
                 <>
-                    <ul className="cart-list">
+                    <div className="cart-list">
                         {cartList.map((producto) => (
-                            <li key={producto.id} className="cart-item">
+                            <div key={producto.id} className="cart-item">
+                                <img src={producto.image} alt={producto.titulo} className="cart-item-image" />
                                 <div className="cart-item-details">
-                                    <img src={producto.image} alt={producto.titulo} className="cart-item-image" />
-                                    <span className="cart-item-name">{producto.titulo}</span>
-                                    <span className="cart-item-quantity">Cantidad: {producto.quantity}</span>
-                                    <span className="cart-item-price">Precio por unidad: ${producto.precio}</span>
-                                    <span className="cart-item-total">Total: ${producto.precio * producto.quantity}</span>
+                                    <h3 style={{ marginBottom: '0.5rem', color: '#333' }}>{producto.titulo}</h3>
+                                    <p style={{ color: '#666', marginBottom: '0.5rem' }}>
+                                        <strong>Cantidad:</strong> {producto.quantity}
+                                    </p>
+                                    <p style={{ color: '#667eea', fontWeight: '600', marginBottom: '0.5rem' }}>
+                                        <strong>Precio por unidad:</strong> ${producto.precio?.toLocaleString()}
+                                    </p>
+                                    <p style={{ color: '#333', fontWeight: '700', fontSize: '1.1rem' }}>
+                                        <strong>Subtotal:</strong> ${(producto.precio * producto.quantity)?.toLocaleString()}
+                                    </p>
                                 </div>
                                 <button className="cart-item-remove" onClick={() => handleRemoveItem(producto.id)}>
                                     Eliminar
                                 </button>
-                            </li>
+                            </div>
                         ))}
-                    </ul>
-                    <div className="cart-buttons">
+                    </div>
+                    
+                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                         <button className="cart-clear-button" onClick={limpiarCarrito}>
                             Vaciar Carrito
                         </button>
                     </div>
-                    <p className="cart-total">Precio total: ${cartList.reduce((total, producto) => total + producto.precio * producto.quantity, 0)}</p>
-                    <Link to="/checkout" className="cart-finalizar-compra">
-                        Finalizar Compra
-                    </Link>
-                    <Link to="/" className="boton-5">
-                        Ir al catálogo
-                    </Link>
+                    
+                    <div className="cart-total">
+                        <strong>Total: ${total?.toLocaleString()}</strong>
+                    </div>
+                    
+                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                        <Link to="/checkout" className="cart-finalizar-compra">
+                            Finalizar Compra
+                        </Link>
+                        <br />
+                        <Link to="/" style={{ 
+                            display: 'inline-block', 
+                            marginTop: '1rem',
+                            color: '#667eea',
+                            textDecoration: 'none',
+                            fontWeight: '600'
+                        }}>
+                            ← Seguir Comprando
+                        </Link>
+                    </div>
                 </>
             )}
         </div>

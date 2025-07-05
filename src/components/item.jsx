@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
 
 const Item = ({ producto }) => {
+    // Normalizar la ruta de la imagen
+    const imageUrl = producto.image?.startsWith('./') ? producto.image.replace('./', '/') : producto.image;
     return (
         <div className='card'>
+            <img src={imageUrl} alt={producto.titulo} />
+            <h1>{producto.titulo}</h1>
+            <p className='precio'>$ {producto.precio?.toLocaleString()}</p>
+            <p>{producto.descripcion}</p>
+            <p><strong>Categoría:</strong> {producto.categoria}</p>
+            <p><strong>Stock:</strong> {producto.stock} unidades</p>
             <Link to={`/producto/${producto.id}`}>
-                Ir a Detalle
+                Ver Detalles
             </Link>
-            <p className='parrafo-3'>{producto.titulo}</p>
-            <p className='parrafo-3'>Precio $ {producto.precio}</p>
-            <p className='parrafo-3'>{producto.descripcion}</p>
-            <p className='parrafo-3'>{producto.categoria}</p>
-            <p className='parrafo-3'> Stock {producto.stock}</p>
-            <img src={producto.image} alt="Imagen" className='img' />
-
         </div>
     )
 }
